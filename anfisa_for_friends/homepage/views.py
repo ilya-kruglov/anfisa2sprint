@@ -5,11 +5,7 @@ from ice_cream.models import IceCream
 
 def index(request):
     template_name = 'homepage/index.html'
-    ice_cream_list = IceCream.objects.values(
-        'id', 'title', 'description'
-    ).filter(
-        is_published=True, is_on_main=True
-    ).order_by('title')[1:4]
+    ice_cream_list = IceCream.objects.values('id', 'title', 'category__title')
     context = {
         'ice_cream_list': ice_cream_list,
     }
