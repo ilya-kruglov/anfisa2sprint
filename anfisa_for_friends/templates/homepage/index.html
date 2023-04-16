@@ -4,18 +4,11 @@
 {% endblock %}
 {% block content %}
   <h1 class="pb-2 mb-0">Главная страница</h1>
-  {% comment "Output before ORDER BY" %}
   {% for ice_cream in ice_cream_list %}
     <ul>
       <h3>{{ ice_cream.title }}</h3>
       <p>ID: {{ ice_cream.id }}</p>
       <p>{{ ice_cream.description }}</p>
     </ul>
-  {% endfor %}
-  {% endcomment %}
-  {% for category in categories %}
-    <p>ID: {{ category.id }}</p>
-    <p>{{ category.output_order }}</p>
-    <p>{{ category.title }}</p>
   {% endfor %}
 {% endblock %}
